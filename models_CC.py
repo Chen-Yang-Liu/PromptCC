@@ -130,7 +130,7 @@ class Image_Encoder(nn.Module):
                                          img_feature_h=7,
                                          img_feature_w=7)
 
-        model_path = './checkpoints/classification_model/v4_BEST_checkpoint_ViT-B_32.pth.tar'
+        model_path = './checkpoints/classification_model/cls_model.pth.tar'
         checkpoint = torch.load(model_path, map_location=device)
         model = checkpoint['model_state_dict()']
         self.classification_module.load_state_dict(model)
@@ -261,11 +261,10 @@ class LEVIR_CC_CaptionModel(nn.Module):
 
         self.gpt_embedding_size = self.gpt_decoder.transformer.wte.weight.shape[1]
 
-        self.gpt_decoder.lm_head = nn.Sequential()
-
-        self.ori_voc_size = self.decoder.lm_head.out_features
+        self.ori_voc_size = self.gpt_decoder.lm_head.out_features
         self.lm_head_nochange = nn.Linear(self.gpt_embedding_size, self.ori_voc_size)
         self.lm_head_change = nn.Linear(self.gpt_embedding_size, self.ori_voc_size)
+        self.gpt_decoder.lm_head = nn.Sequential()
         self.pred_flag_projection = nn.Linear(self.gpt_embedding_size, 2)
 
         self.Image_Encoder = Image_Encoder(clip_model_type=encoder_mode,

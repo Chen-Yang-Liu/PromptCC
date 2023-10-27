@@ -36,7 +36,7 @@ def train(args, train_loader, Caption_model, Caption_model_optimizer,Caption_mod
     correct = 0
     total = 0
     accum_steps = 3
-    for idx, (ori_img, changeflag, area, caps, mask, caplens) in enumerate(train_loader):
+    for idx, (ori_img, changeflag, caps, mask, caplens) in enumerate(train_loader):
         # if idx ==10:
         #     break
         data_time.update(time.time() - start)

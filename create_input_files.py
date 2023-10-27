@@ -2,8 +2,6 @@
 import time
 import os
 import numpy as np
-import h5py
-
 from imageio import imread
 from skimage.transform import resize as imresize
 from random import seed, choice, sample
@@ -15,7 +13,7 @@ import pickle
 import json
 import os
 from tqdm import tqdm
-import argparse,random
+import argparse, random
 
 
 def create_input_files(args,dataset, karpathy_json_path, image_folder, captions_per_image, min_word_freq, output_folder,
@@ -31,8 +29,6 @@ def create_input_files(args,dataset, karpathy_json_path, image_folder, captions_
     :param output_folder: folder to save files
     :param max_len: don't sample captions longer than this length
     """
-
-    assert dataset in {'coco', 'flickr8k', 'flickr30k', 'RSICD','LEVIR_CC'}
 
     # Read Karpathy JSON
     with open(karpathy_json_path, 'r') as j:
@@ -65,23 +61,13 @@ def create_input_files(args,dataset, karpathy_json_path, image_folder, captions_
         if len(captions) == 0:
             continue
 
-        if dataset == 'coco':
-            path = os.path.join(image_folder, img['filepath'], img['filename'])
-        elif dataset == 'LEVIR_CC':
-            # FIXME:need to change for levir_CC
+        if dataset == 'LEVIR_CC':
             path1 = os.path.join(image_folder, img['split'], 'A', img['filename'])
             path2 = os.path.join(image_folder, img['split'], 'B', img['filename'])
             path = [path1, path2]
             changeflag = img['changeflag']
-        elif dataset == 'RSICD':
-            path = os.path.join(image_folder, img['filename'])
-            changeflag = 'erro_RSICD'
 
-
-        if img['split'] in {'train', 'restval'}:
-            # if random.random()<(70/100):
-            # if train_num%10<7:
-            #     print(path)
+        if img['split'] in {'train'}:
             train_image_paths.append(path)
             train_image_captions.append(captions)
             train_image_changeflag.append(changeflag)
@@ -126,6 +112,7 @@ def create_input_files(args,dataset, karpathy_json_path, image_folder, captions_
                 captions = imcaps[i] + [choice(imcaps[i]) for _ in range(captions_per_image - len(imcaps[i]))]
             else:
                 if split == 'TRAIN':
+                    # for nochanged image pairs, just use one kind of nochanged captions during the training
                     if 'the scene is the same as before' in imcaps[i]:
                         imcaps[i] = []
                         imcaps[i].append('the scene is the same as before')
@@ -139,15 +126,9 @@ def create_input_files(args,dataset, karpathy_json_path, image_folder, captions_
             if dataset =='LEVIR_CC':
                 ori_img_A = io.imread(impaths[i][0])
                 ori_img_B = io.imread(impaths[i][1])
-                pre_label = io.imread(impaths[i][1].replace('B', 'predict'))
-                pre_label[pre_label == 255] = 1
-                area = np.sum(pre_label)
-                images = {'ori_img': [ori_img_A, ori_img_B], 'changeflag': imchangeflag[i],'area':area}
-
+                images = {'ori_img': [ori_img_A, ori_img_B], 'changeflag': imchangeflag[i]}
             else:
-                img = io.imread(impaths[i])
-                ori_img = img
-                images = {'ori_img': ori_img}
+                print("Error")
 
             feature_list.append(images)
 
@@ -171,19 +152,12 @@ if __name__ == '__main__':
     parser.add_argument('--clip_model_type', default="ViT-B/32", choices=('RN50', 'RN101', 'RN50x4', 'ViT-B/32'))
     args = parser.parse_args()
 
-    # create_input_files(args,dataset='RSICD',
-    #                    karpathy_json_path=r'E:/Dataset/Caption/image_caption/RSICD_captions/dataset_rsicd.json',
-    #                    image_folder=r'E:/Dataset/Caption/image_caption/RSICD_captions/images/',
-    #                    captions_per_image=5,
-    #                    min_word_freq=5,
-    #                    output_folder=r'./data/RSICD/all',
-    #                    max_len=50)
     create_input_files(args, dataset='LEVIR_CC',
-                       karpathy_json_path=r'E:/Dataset/Caption/change_caption/Levir_CC_dataset/LevirCCcaptions_v1.json',
-                       image_folder=r'E:/Dataset/Caption/change_caption/Levir_CC_dataset/images',
+                       karpathy_json_path=r'./data/LEVIR_CC/LevirCCcaptions_v1.json',
+                       image_folder=r'./data/LEVIR_CC/images',
                        captions_per_image=5,
                        min_word_freq=5,
-                       output_folder=r'./data/LEVIR_CC/change_and_1_nocahnge_just_train_building_0216removetrainflag0',
+                       output_folder=r'./data/LEVIR_CC',
                        max_len=50)
 
     print('create_input_files END at: ', time.strftime("%m-%d  %H : %M : %S", time.localtime(time.time())))

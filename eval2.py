@@ -35,7 +35,7 @@ def evaluate(args, dataloader,tokenizer, model):
         changeflag_correct_nochange = 0
         total = 0
         with torch.no_grad():
-            for i, (ori_img, changeflag,area, caps, mask, caplens, all_captions) in enumerate(tqdm(dataloader, desc=" EVALUATING AT BEAM SIZE " + str(args.beam_size))):
+            for i, (ori_img, changeflag, caps, mask, caplens, all_captions) in enumerate(tqdm(dataloader, desc=" EVALUATING AT BEAM SIZE " + str(args.beam_size))):
                 # if i>20:
                 #     break
                 if (i + 1) % 5 != 0:
@@ -216,7 +216,7 @@ def main(args):
     tokenizer = GPT2Tokenizer.from_pretrained(gpt2_type)
     filename = os.listdir(args.model_path)
     for i in range(len(filename)):
-        if 'epoch' in filename[i]:
+        if 'epoch' in filename[i] or 'pth' not in filename[i]:
             continue
         print(time.strftime("%m-%d  %H : %M : %S", time.localtime(time.time())))
         model_path = os.path.join(args.model_path, filename[i])
@@ -251,7 +251,7 @@ if __name__ == '__main__':
                         help='folder with data files saved by create_input_files.py.')
     parser.add_argument('--data_name', default=dataset_name + "_5_cap_per_img", help='base name shared by data files.')
 
-    parser.add_argument('--model_path', default='F:/LCY/Prompt-CC/Prompt_unify_captioning_1026/checkpoints2/xiaorong/prompt_51_num_layers_23_ignore0_hard/2-times/')#./checkpoints/train_1_method_10/3-times/
+    parser.add_argument('--model_path', default='./checkpoints/cap_model/')#./checkpoints/train_1_method_10/3-times/
     parser.add_argument('--clip_model_type', default="ViT-B/32")#, choices=('RN50', 'RN101', 'RN50x4', 'ViT-B/32')
     parser.add_argument('--prefix_length', type=int, default=59)  # 7*7+10
     parser.add_argument('--prompt_len', type=int, default=5)

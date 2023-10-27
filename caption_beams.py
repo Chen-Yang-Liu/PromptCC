@@ -228,7 +228,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_name', default=dataset_name + "_5_cap_per_img", help='base name shared by data files.')
 
     parser.add_argument('--image_path', default='./Example/A')
-    parser.add_argument('--model_path', default='F:/LCY/Prompt-CC/Prompt_unify_captioning_1026/checkpoints2/xiaorong/prompt_51_num_layers_23_ignore0_hard/2-times/')#./checkpoints/train_1_method_10/3-times/
+    parser.add_argument('--model_path', default='./checkpoints/cap_model')
     parser.add_argument('--clip_model_type', default="ViT-B/32", choices=('RN50', 'RN101', 'RN50x4', 'ViT-B/32'))
     parser.add_argument('--prefix_length', type=int, default=59)  # 7*7+10
     parser.add_argument('--prompt_len', type=int, default=5)

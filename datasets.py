@@ -89,7 +89,6 @@ class CaptionDataset(Dataset):
             B = self.preprocess(Image.fromarray(ori_img_list[1])).unsqueeze(0)
             ori_img = (torch.cat([A, B], dim=0))
             changeflag = img_dict['changeflag']
-            area = int(img_dict['area'])
 
         # FIXME:
         tokens, mask = self.pad_tokens(i)
@@ -101,7 +100,7 @@ class CaptionDataset(Dataset):
         if self.split == 'TRAIN':
             # if changeflag==1:
             #     print(changeflag)
-            return ori_img, changeflag,area, caption, mask, caplen
+            return ori_img, changeflag, caption, mask, caplen
         else:
             # For validation of testing, also return all 'captions_per_image' captions to find BLEU-4 score
             # caption_setlist = self.captions[((i // self.cpi) * self.cpi):(((i // self.cpi) * self.cpi) + self.cpi)]
@@ -110,7 +109,7 @@ class CaptionDataset(Dataset):
                 one_caption, _ = self.pad_tokens(k)
                 caption_setlist.append(one_caption.tolist())
             all_captions = torch.LongTensor(caption_setlist)
-            return ori_img, changeflag,area, caption, mask, caplen, all_captions
+            return ori_img, changeflag, caption, mask, caplen, all_captions
 
     def __len__(self):
         return self.dataset_size

@@ -62,6 +62,7 @@ Then preprocess dataset as follows:
 python create_input_files.py
 ```
 After that, you can find some resulted `.pkl` files in `./data/LEVIR_CC/`. 
+Of course, you can use our provided resulted `.pkl` files directly in [[Hugging face](https://huggingface.co/lcybuaa/PromptCC/tree/main)].
 
 ### Inference Demo
 You can download our pretrained model here: [[Hugging face](https://huggingface.co/lcybuaa/PromptCC/tree/main)]

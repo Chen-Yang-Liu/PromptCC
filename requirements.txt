@@ -1,0 +1,102 @@
+2to3==1.0
+asttokens==2.1.0
+async-generator==1.10
+attrs==22.2.0
+backcall==0.2.0
+brotlipy==0.7.0
+certifi @ file:///C:/b/abs_4f5wo627a3/croots/recipe/certifi_1663615677642/work/certifi
+cffi @ file:///C:/Windows/Temp/abs_6808y9x40v/croots/recipe/cffi_1659598653989/work
+charset-normalizer==2.1.1
+click==8.1.3
+clip @ git+https://github.com/openai/CLIP.git@d50d76daa670286dd6cacf3bcd80b5e4823fc8e1
+cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1632508026186/work
+cog==0.0.3
+colorama @ file:///C:/Windows/TEMP/abs_9439aeb1-0254-449a-96f7-33ab5eb17fc8apleb4yn/croots/recipe/colorama_1657009099097/work
+cryptography @ file:///C:/ci/cryptography_1652083563162/work
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+cytoolz==0.11.0
+dask @ file:///C:/ci/dask-core_1658515307198/work
+decorator==5.1.1
+exceptiongroup==1.1.0
+executing==1.2.0
+filelock==3.8.0
+fonttools==4.25.0
+fsspec @ file:///C:/Windows/TEMP/abs_a2mhnomvfy/croots/recipe/fsspec_1659972224540/work
+ftfy==6.1.1
+h11==0.14.0
+h5py @ file:///C:/ci/h5py_1659089875384/work
+huggingface-hub==0.9.1
+idna==3.4
+imagecodecs @ file:///C:/ci/imagecodecs_1635511087451/work
+imageio @ file:///C:/Windows/TEMP/abs_24c1b783-7540-4ca9-a1b1-0e8aa8e6ae64hb79ssux/croots/recipe/imageio_1658785038775/work
+imgaug==0.4.0
+ipython==8.6.0
+jedi==0.18.1
+jieba==0.42.1
+joblib==1.2.0
+kiwisolver @ file:///C:/ci/kiwisolver_1653292407425/work
+locket @ file:///C:/ci/locket_1652904031364/work
+loguru @ file:///C:/ci/loguru_1643634826236/work
+matplotlib @ file:///C:/ci/matplotlib-suite_1660169687702/work
+matplotlib-inline==0.1.6
+mkl-fft==1.3.1
+mkl-random @ file:///C:/ci/mkl_random_1626186184308/work
+mkl-service==2.4.0
+munkres==1.1.4
+networkx @ file:///C:/ci/networkx_1657716998256/work
+numpy==1.22.0
+opencv-python==4.8.0.74
+outcome==1.2.0
+packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
+pandas==2.0.3
+parso==0.8.3
+partd @ file:///opt/conda/conda-bld/partd_1647245470509/work
+pickleshare==0.7.5
+Pillow==9.2.0
+prompt-toolkit==3.0.31
+ptflops==0.7
+pure-eval==0.2.2
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+Pygments==2.13.0
+pynvml==11.4.1
+pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
+pyparsing @ file:///C:/Users/BUILDE~1/AppData/Local/Temp/abs_7f_7lba6rl/croots/recipe/pyparsing_1661452540662/work
+PySocks @ file:///C:/ci/pysocks_1605307512533/work
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz==2023.3
+PyWavelets @ file:///C:/ci/pywavelets_1648728084106/work
+PyYAML==6.0
+regex==2022.9.13
+requests @ file:///C:/ci/requests_1657735342357/work
+sacremoses==0.0.53
+scikit-image==0.18.1
+scipy @ file:///C:/ci/scipy_1630606917240/work
+selenium==4.7.2
+Shapely==1.8.5.post1
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sniffio==1.3.0
+sortedcontainers==2.4.0
+stack-data==0.6.0
+thop==0.1.1.post2209072238
+tifffile @ file:///tmp/build/80754af9/tifffile_1627275862826/work
+tokenizers==0.10.3
+toolz @ file:///tmp/build/80754af9/toolz_1636545406491/work
+torch==1.12.1+cu113
+torchaudio==0.12.1
+torchinfo==1.8.0
+torchstat==0.0.7
+torchsummary==1.5.1
+torchvision==0.13.1+cu113
+tqdm==4.64.1
+traitlets==5.5.0
+transformers==4.10.3
+trio==0.22.0
+trio-websocket==0.9.2
+typing_extensions @ file:///C:/Windows/TEMP/abs_dd2d0moa85/croots/recipe/typing_extensions_1659638831135/work
+tzdata==2023.3
+urllib3==1.26.12
+wcwidth==0.2.5
+win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
+win32-setctime @ file:///home/tkoch/Workspace/win32_setctime/win32_setctime_1643630045199/work
+wincertstore==0.2
+wsproto==1.2.0

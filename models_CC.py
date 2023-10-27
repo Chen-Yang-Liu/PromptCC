@@ -120,8 +120,8 @@ class Image_Encoder(nn.Module):
         self.prefix_A = nn.Parameter(scale * torch.randn(1, 2*d_model), requires_grad=True)
         self.prefix_B = nn.Parameter(scale * torch.randn(1, 2*d_model), requires_grad=True)
 
-        # gpt2_type = 'gpt2'
-        gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
+        gpt2_type = 'gpt2'
+        # gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
         self.tokenizer = GPT2Tokenizer.from_pretrained(gpt2_type)
         self.gpt_encoderimg = GPT2LMHeadModel.from_pretrained(gpt2_type)
 
@@ -255,8 +255,8 @@ class LEVIR_CC_CaptionModel(nn.Module):
         self.img_feature_w = img_feature_w
 
         if self.decoder_mode == 'gpt2':
-            # gpt2_type = 'gpt2'
-            gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
+            gpt2_type = 'gpt2'
+            # gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
             self.gpt_decoder = GPT2LMHeadModel.from_pretrained(gpt2_type) #(lm_head): Linear(in_features=768, out_features=50257, bias=False)
 
         self.gpt_embedding_size = self.gpt_decoder.transformer.wte.weight.shape[1]

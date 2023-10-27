@@ -190,8 +190,8 @@ def main(args):
         print(time.strftime("%m-%d  %H : %M : %S", time.localtime(time.time())))
         # continue
         # One epoch's validation
-        # gpt2_type = 'gpt2'
-        gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
+        gpt2_type = 'gpt2'
+        # gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
         tokenizer = GPT2Tokenizer.from_pretrained(gpt2_type)
         metrics = evaluate(args, test_loader, tokenizer, Caption_model)
 
@@ -222,7 +222,7 @@ if __name__ == '__main__':
 
     # Model parameters
     parser.add_argument('--clip_model_type', default="ViT-B/32")#, choices=('RN50', 'RN101', 'RN50x4', 'ViT-B/32')
-    parser.add_argument('--decoder_mode', default="gpt2", choices=('gpt2', 'transformer_decoder'))
+    parser.add_argument('--decoder_mode', default="gpt2", help='gpt2 name')
 
     parser.add_argument('--finetune_gpt2', action='store_true', default=False)
 

@@ -83,12 +83,6 @@ def evaluate(args, dataloader,tokenizer, model):
                         elif xunhuan==1:
                             logits, pre = model.dual_branch_func(pred_changeflag, out)
 
-
-                    elif model.decoder_mode == 'transformer_decoder':
-                        # DecoderTransformer
-                        out = model.DecoderTransformer(memory=fe,tgt=inputs_embeds)
-                        logits = model.lm_head(out).permute(1, 0, 2)
-
                     next_token_logits = logits[:, -1, :]  # 取最后一个单词的预测分布
                     vocab_size = logits.size(-1)  # 50257
                     filtered_logits = next_token_logits
@@ -211,8 +205,8 @@ def evaluate(args, dataloader,tokenizer, model):
 
 def main(args):
     # tokenizer
-    # gpt2_type = 'gpt2'
-    gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
+    gpt2_type = 'gpt2'
+    # gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
     tokenizer = GPT2Tokenizer.from_pretrained(gpt2_type)
     filename = os.listdir(args.model_path)
     for i in range(len(filename)):

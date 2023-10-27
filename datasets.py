@@ -45,8 +45,8 @@ class CaptionDataset(Dataset):
 
         # FIXME:
         self.prefix_length = prefix_length
-        # gpt2_type = 'gpt2'
-        gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
+        gpt2_type = 'gpt2'
+        # gpt2_type = r'C:\Users\lcy\.cache\huggingface\hub\models--gpt2\snapshots\e7da7f221d5bf496a48136c0cd264e630fe9fcc8'
         tokenizer = GPT2Tokenizer.from_pretrained(gpt2_type)
         captions_tokens = []
         self.caption2embedding = []

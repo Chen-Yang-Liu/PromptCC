@@ -84,10 +84,14 @@ python train.py
 ```python
 python eval2.py
 ```
-Note: 
+ **<font color="#000000">Note: </font>**
 - It's important to note that, before model training and evaluation, a sentence needs to undergo tokenization and mapping of words to indices. For instance, in the case of the word “difference”, GPT would tokenize it as ['diff', 'erence'] using its subword-based tokenization mechanism and map them to [26069, 1945] using its word mapping.  Different tokenization and word mapping will influence the scores of the evaluation metrics. Therefore, to ensure a fair performance comparison, it is essential to utilize the same tokenization and word mapping when calculating evaluation metrics for all comparison methods.
-- In our this paper, for all comparison methods, we have retrained and evaluated model performance using the publicly available **<font color="#C00000">tokenizer and word mapping of GPT</font>**, which are more comprehensive and widely acknowledged. We
-also recommend that future researchers follow this.
+- For all comparison methods, we have retrained and evaluated model performance using the publicly available  **<font color="#000000">tokenizer and word mapping of GPT</font>**, which are more comprehensive and widely acknowledged. We also recommend that future researchers follow this.
+- Comparison with SOTA: 
+<div align="center">
+<img src="./Example/Comparison.png" width="600"></img>
+</div>
+
 ## Citation & Acknowledgments
 If you find this paper useful in your research, please consider citing:
 ```

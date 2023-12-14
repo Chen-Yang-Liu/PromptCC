@@ -9,7 +9,9 @@
 
 ## Welcome to our repository! 
 
-This repository contains the PyTorch implementation of our PromptCC model.
+This repository contains the PyTorch implementation of our PromptCC model in the paper: "A Decoupling Paradigm with Prompt Learning for Remote Sensing Image Change Captioning". 
+
+For more information, please see our published paper in [[IEEE](https://ieeexplore.ieee.org/document/10271701)]  ***(Accepted by TGRS 2023)***
 
 ## Overview
 - Considering the specificity of the RSICC task, PromptCC employs a novel decoupling paradigm and deeply integrates prompt learning and pre-trained large language models.

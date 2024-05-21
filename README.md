@@ -66,6 +66,10 @@ python create_input_files.py
 After that, you can find some resulted `.pkl` files in `./data/LEVIR_CC/`. 
 Of course, you can use our provided resulted `.pkl` files directly in [[Hugging face](https://huggingface.co/lcybuaa/PromptCC/tree/main)].
 
+### NOTE 
+Please modify the source code of 'CLIP' package, please modify CLIP.model.VisionTransformer.forward() like [[this](https://github.com/Chen-Yang-Liu/PromptCC/issues/3)].
+
+
 ### Inference Demo
 You can download our pretrained model here: [[Hugging face](https://huggingface.co/lcybuaa/PromptCC/tree/main)]
 

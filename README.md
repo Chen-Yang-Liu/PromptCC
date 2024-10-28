@@ -45,7 +45,7 @@ pip install -r requirements.txt
 ### Data preparation
 Firstly, download the image pairs of LEVIR_CC dataset from the [[Repository](https://github.com/Chen-Yang-Liu/RSICC)]. Extract images pairs and put them in `./data/LEVIR_CC/` as follows:
 ```python
-.data/LEVIR_CC:
+./data/LEVIR_CC:
                 ├─LevirCCcaptions_v1.json (one new json file with changeflag, different from the old version from the above Download link)
                 ├─images
                   ├─train

@@ -13,6 +13,10 @@ This repository contains the PyTorch implementation of our PromptCC model in the
 
 For more information, please see our published paper in [[IEEE](https://ieeexplore.ieee.org/document/10271701)]  ***(Accepted by TGRS 2023)***
 
+## 🥳 New
+
+🔥 Our survey "**Remote Sensing Temporal Vision-Language Models: A Comprehensive Survey": [Arxiv](https://arxiv.org/abs/2412.02573) || [Github](https://github.com/Chen-Yang-Liu/Awesome-RS-Temporal-VLM)** 🔥 
+
 ## Overview
 - Considering the specificity of the RSICC task, PromptCC employs a novel decoupling paradigm and deeply integrates prompt learning and pre-trained large language models.
 - This repository will encompass all aspects of our code, including **training, inference, computation of evaluation metrics, as well as the tokenization and word mapping** used in our work.

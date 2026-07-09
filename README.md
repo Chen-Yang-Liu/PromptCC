@@ -4,7 +4,11 @@
 
 **[Chenyang Liu](https://chen-yang-liu.github.io/), [Rui Zhao](https://ruizhaocv.github.io), [Jianqi Chen](https://windvchen.github.io/), [Zipeng Qi](https://scholar.google.com/citations?user=KhMtmBsAAAAJ), [Zhengxia Zou](https://scholar.google.com.hk/citations?hl=en&user=DzwoyZsAAAAJ), and [Zhenwei Shi*✉](https://scholar.google.com.hk/citations?hl=en&user=kNhFWQIAAAAJ)**
 
-
+<div align="center">
+  <a href="https://ieeexplore.ieee.org/abstract/document/10271701">
+    <span style="font-size: 20px; ">🏆️ESI Highly Cited Paper </span>
+  </a>
+</div>
 </div>
 
 ## Welcome to our repository! 
